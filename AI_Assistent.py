@@ -45,14 +45,14 @@ def take_command():
             listener.adjust_for_ambient_noise(source, duration=1)
             print('listening...')
             voice = listener.listen(source)
-            command = listener.recognize_google(voice, language='en_IN' or 'hi_IN')
+            command = listener.recognize_google(voice, language='en_IN')
             command = command.lower()
             if 'wake up' in command:
                 talk("What happend master, How can I help you?")
                 voice2 = listener.listen(source)
                 command = listener.recognize_google(voice2, language='en_IN')
             if 'echo' or 'eco' or 'eko' in command:
-                talk("kya bhaiya? boliye!")
+                talk("Hello, my Master. how can i help you?")
                 voice2 = listener.listen(source)
                 command = listener.recognize_google(voice2, language='en_IN')
     except sr.UnknownValueError as e:
